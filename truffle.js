@@ -1,3 +1,6 @@
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "enlist lounge shift mango strong brick city snack absurd equip inquiry thank"
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
@@ -11,6 +14,12 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: "4224"
-    }
+    },
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/66b0d4b979ff4b9e8a14a8c079f371ab")
+      },
+      network_id: 3
+    },
   }
 };
