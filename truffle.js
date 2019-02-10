@@ -15,11 +15,19 @@ module.exports = {
       port: 8545,
       network_id: "4224"
     },
-    rinkeby: {
+    // rinkeby: {
+    //   provider: function() {
+    //     return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/66b0d4b979ff4b9e8a14a8c079f371ab")
+    //   },
+    //   network_id: 3
+    // },
+    ropsen: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/66b0d4b979ff4b9e8a14a8c079f371ab")
+        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/66b0d4b979ff4b9e8a14a8c079f371ab")
       },
-      network_id: 3
+      network_id: 3,
+      gas: 4500000,
+      gasPrice: 10000000000
     },
   }
 };
